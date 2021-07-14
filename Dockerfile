@@ -1,7 +1,7 @@
 FROM jmercha/raspbian
 
-RUN apt-get update -y
-RUN apt-get upgrade -y
+RUN apt-get update
+RUN apt-get upgrade
 RUN apt-get install curl raspi-config dbus systemd libraspberrypi-bin -y
 RUN apt-get clean -y
 RUN rm -rf /var/run/apt/sources.list*
