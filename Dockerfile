@@ -1,9 +1,9 @@
 FROM jmercha/raspbian
 
-RUN apt-get -y update
-RUN apt-get -y upgrade
+RUN apt-get update -y
+RUN apt-get upgrade -y
 RUN apt-get install curl raspi-config dbus systemd libraspberrypi-bin -y
-RUN apt-get -y clean
+RUN apt-get clean -y
 RUN rm -rf /var/run/apt/sources.list*
 
 RUN find /etc/systemd -name '*.timer' | xargs rm -v && \
