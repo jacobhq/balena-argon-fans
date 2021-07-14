@@ -1,9 +1,9 @@
 FROM jmercha/raspbian
 
-RUN apt-get -y update && apt-get -y upgrade && \
-	apt-get install curl raspi-config dbus systemd libraspberrypi-bin -y && \
-	apt-get -y clean && \
-	rm -rf /var/run/apt/sources.list*
+RUN apt-get -y update && apt-get -y upgrade
+RUN apt-get install curl raspi-config dbus systemd libraspberrypi-bin -y
+RUN apt-get -y clean
+RUN rm -rf /var/run/apt/sources.list*
 
 RUN find /etc/systemd -name '*.timer' | xargs rm -v && \
 	systemctl set-default multi-user.target
